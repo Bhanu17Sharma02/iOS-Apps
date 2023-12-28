@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+use_modular_headers!
+
+use_frameworks!
+
+workspace 'KastleSDKVM.xcworkspace'
+
+
+def shared_mobile_center_pods
+pod 'AppCenter'
+pod 'Alamofire', '~> 5.6.2'
+end
+
+target 'VisitorApp' do
+project 'VisitorApp/VisitorApp.xcodeproj'
+shared_mobile_center_pods
+end
+
+target 'KastleSDK_VM' do
+project 'KastleSDK_VM/KastleSDK_VM.xcodeproj'
+shared_mobile_center_pods
+end
+
+
